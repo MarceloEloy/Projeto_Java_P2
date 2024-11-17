@@ -1,16 +1,18 @@
 package Jogo.Personagens;
 
 //Classe abstrata, não podendo ser instânciada mas posuindo todos os métodos necessários para as classes filhas
-public class FichaPersonagem{
-    public FichaPersonagem(Raca raca, Integer level, String nome){
+public abstract class FichaPersonagem{
+    public FichaPersonagem(Raca raca, Integer level, String nome, int id){
         this.raca = raca;
         this.level = level;
         this.nome = nome;
+        this.id = id;
     }
+    public int id;
     protected Raca raca;
-    protected Integer level;
+    public Integer level;
     public Double vida = null;
-    protected String nome;
+    public String nome;
     public Double definirDano(){
         double dano = 0;
         switch (raca){
@@ -26,12 +28,12 @@ public class FichaPersonagem{
     public Double definirDefesa(){
         double defesa = 0;
         switch (raca){
-            case GOBLIN -> defesa = 0.4 * this.level;
-            case ELFO -> defesa = 1.2 * this.level;
-            case OGRO -> defesa = 3.5 * this.level;
-            case GNOMO -> defesa = 0.5 * this.level;
-            case HUMANO -> defesa = this.level;
-            case MEIO_HUMANO -> defesa = 0.5 *  this.level;
+            case GOBLIN -> defesa = 2.5 * this.level;
+            case ELFO -> defesa = 5 * this.level;
+            case OGRO -> defesa = 6 * this.level;
+            case GNOMO -> defesa = 2.5 * this.level;
+            case HUMANO -> defesa = 5 * this.level;
+            case MEIO_HUMANO -> defesa = 2.5 *  this.level;
         }
 
         return this.vida = defesa;
@@ -47,5 +49,14 @@ public class FichaPersonagem{
             case MEIO_HUMANO -> velocidade = 3.1 * this.level;
         }
         return velocidade;
+    }
+
+    @Override
+    public String toString() {
+        return "Personagem{" +
+                "raca=" + raca +
+                ", level=" + level +
+                ", nome='" + nome + '\'' +
+                '}';
     }
 }

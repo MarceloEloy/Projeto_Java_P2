@@ -1,8 +1,8 @@
 package Jogo.Personagens;
 
-public class Inimigo extends FichaPersonagem implements HabilidadesComuns {
-    public Inimigo(Raca raca, Integer level, String nome) {
-        super(raca, level, nome);
+public class Inimigo extends FichaPersonagem implements HabilidadesComuns<FichaPersonagem> {
+    public Inimigo(Raca raca, Integer level, String nome, int id) {
+        super(raca, level, nome, id);
     }
     // toda a proxima implementação de interface foi feita usando GENERICS e trabalha polimorfismo.
     @Override
@@ -12,11 +12,11 @@ public class Inimigo extends FichaPersonagem implements HabilidadesComuns {
             fichaPersonagem.definirDefesa();
         }
         if(this.vida <= 0){
-            System.out.println("Este personagem está morto!");
+            System.out.println("Inimigo Morto!");
         }
         else if (fichaPersonagem.vida <= 0) {
 
-            System.out.println("Este oponente está morto!");
+            System.out.println("Este Heroi está morto!");
         }
         else{
             fichaPersonagem.vida -= definirDano();
@@ -24,13 +24,13 @@ public class Inimigo extends FichaPersonagem implements HabilidadesComuns {
         }
     }
     @Override
-    public void correr(FichaPersonagem fichaPersonagem) {
+    public Integer correr(FichaPersonagem fichaPersonagem) {
         if(this.vida == null){
             definirDefesa();
             fichaPersonagem.definirDefesa();
         }
         if(this.vida <= 0){
-            System.out.println("Este personagem está morto!");
+            System.out.println("Inimigo Morto!");
         }
         else if (fichaPersonagem.vida <= 0) {
 
@@ -39,6 +39,7 @@ public class Inimigo extends FichaPersonagem implements HabilidadesComuns {
         else{
             System.out.println("Inimigos não fogem!!!");
         }
+        return 0;
     }
 
     @Override
@@ -46,7 +47,19 @@ public class Inimigo extends FichaPersonagem implements HabilidadesComuns {
         if(this.vida == null){
             definirDefesa();
         }
-        this.vida += level;
-        System.out.println("Curou " + this.level + " Pontos de vida");
+        if(this.vida > 0) {
+            this.vida += level;
+            System.out.println("Curou " + this.level + " Pontos de vida");
+        }
+        else{
+            System.out.println("Inimigo Morto!");
+        }
+    }
+    @Override
+    public void mostrarVida() {
+        if(this.vida == null){
+            definirDefesa();
+        }
+        System.out.println(this.vida);
     }
 }
