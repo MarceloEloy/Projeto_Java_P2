@@ -15,7 +15,7 @@ public class TelaJogo {
     public int special = 0;
     public void tela() throws IOException {
         try{
-         backgorund = new ImageIcon(ImageIO.read(new File("C:\\Users\\marco\\IdeaProjects\\Projeto_Java_P2\\src\\Jogo\\Imagems\\BACKGROUND.png")));
+         backgorund = new ImageIcon(ImageIO.read(new File("/Jogo/Imagems/BACKGROUND.png")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -28,13 +28,13 @@ public class TelaJogo {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setLayout(null);
-        JButton atacar = new JButton(new ImageIcon("C:\\Users\\marco\\IdeaProjects\\Projeto_Java_P2\\src\\Jogo\\Imagems\\BOTAOATACAR.png"));
+        JButton atacar = new JButton(new ImageIcon("/Jogo/Imagems/Imagems/BOTAOATACAR.png"));
         atacar.setBounds(10, 405, 150, 50);
-        JButton correr = new JButton(new ImageIcon("C:\\Users\\marco\\IdeaProjects\\Projeto_Java_P2\\src\\Jogo\\Imagems\\BOTAOCORRER.png"));
+        JButton correr = new JButton(new ImageIcon("/Jogo/Imagems/Imagems/BOTAOCORRER.png"));
         correr.setBounds(170, 405, 150, 50);
-        JButton curar = new JButton(new ImageIcon("C:\\Users\\marco\\IdeaProjects\\Projeto_Java_P2\\src\\Jogo\\Imagems\\BOTAOCURAR.png"));
+        JButton curar = new JButton(new ImageIcon("/Jogo/Imagems/Imagems/BOTAOCURAR.png"));
         curar.setBounds(330, 405, 150, 50);
-        JButton especial = new JButton(new ImageIcon("C:\\Users\\marco\\IdeaProjects\\Projeto_Java_P2\\src\\Jogo\\Imagems\\BOTAOESPECIAL.png"));
+        JButton especial = new JButton(new ImageIcon("/Jogo/Imagems/Imagems/BOTAOESPECIAL.png"));
         especial.setBounds(490, 405, 150, 50);
         frame.add(atacar);
         frame.add(curar);
