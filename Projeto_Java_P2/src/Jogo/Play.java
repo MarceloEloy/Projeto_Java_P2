@@ -28,7 +28,7 @@ public class Play {
                     System.out.println("Você gostaria de criar um heroi [H] ou um inimigo [I]?");
                     String classe = criacaoString.next().toUpperCase();
                     if (classe.toCharArray()[0] == 'H') {
-                        System.out.println("A qual raça seu heroi pertence? ELFO [1] OGRO [2] HUMANO [3] GOBLIN [4] GNOMO [5]");
+                        System.out.println("A qual raça seu heroi pertence? [1] ELFO [2] OGRO [3] HUMANO [4] GOBLIN [5] GNOMO");
                         int escolhaRaca = criacaoNum.nextInt();
                         Raca raca = null;
                         switch (escolhaRaca) {
@@ -53,7 +53,7 @@ public class Play {
                         }
                     }
                     if (classe.toCharArray()[0] == 'I') {
-                        System.out.println("A qual raça seu inimigo pertence? ELFO [1] OGRO [2] HUMANO [3] GOBLIN [4] GNOMO [5]");
+                        System.out.println("A qual raça seu inimigo pertence? [1] ELFO [2] OGRO [3] HUMANO [4] GOBLIN [5] GNOMO");
                         int escolhaRaca = criacaoNum.nextInt();
                         Raca raca = null;
                         switch (escolhaRaca) {
